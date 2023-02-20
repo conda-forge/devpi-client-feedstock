@@ -20,6 +20,7 @@ requirements:
     - python >=3.4
     - pip
   run:
+    - iniconfig
     - python >=3.4
     - python-build
     - check-manifest >=0.28
