@@ -1,4 +1,4 @@
-{% set version = "6.0.3" %}
+{% set version = "6.0.4" %}
 
 package:
   name: devpi-client
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/devpi-client/devpi-client-{{ version }}.tar.gz
-  sha256: 72c7505319e8a47fa462da2a76fc9728d5b77c6910352444258c637acf43822f
+  sha256: b87309e9af657ea4f104381b29816afc08f8821920091ca182fdbb11ec9f00d6
 
 build:
   entry_points:
