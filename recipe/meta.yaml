@@ -9,11 +9,11 @@ source:
   sha256: 313bccbf2dd6a55f9b6dbfecb06b23528bf213f3a3b78056cfb230805fe41098
 
 build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - devpi = devpi.main:main
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
-  number: 0
 
 requirements:
   host:
