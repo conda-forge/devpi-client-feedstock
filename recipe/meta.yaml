@@ -17,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.4
+    - python >=3.7
     - pip
   run:
     - iniconfig
-    - python >=3.4
+    - python >=3.7
     - python-build
     - check-manifest >=0.28
     - devpi-common <4,>=3.6.0
