@@ -17,17 +17,18 @@ build:
 
 requirements:
   host:
-    - python >=3.7
     - pip
-  run:
-    - iniconfig
     - python >=3.7
-    - python-build
+  run:
     - check-manifest >=0.28
+    - colorama
     - devpi-common <5,>=4
+    - iniconfig
     - pkginfo >=1.4.2
     - platformdirs
     - pluggy >=0.6.0,<2.0
+    - python >=3.7
+    - python-build
 
 test:
   imports:
