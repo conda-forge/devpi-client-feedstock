@@ -11,6 +11,8 @@ Summary: devpi upload/install/... workflow commands for Python developers
 
 Development: https://github.com/devpi/devpi
 
+Documentation: https://doc.devpi.net
+
 Current build status
 ====================
 

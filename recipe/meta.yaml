@@ -1,4 +1,4 @@
-{% set version = "6.0.6" %}
+{% set version = "7.0.0" %}
 
 package:
   name: devpi-client
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/devpi-client/devpi-client-{{ version }}.tar.gz
-  sha256: 313bccbf2dd6a55f9b6dbfecb06b23528bf213f3a3b78056cfb230805fe41098
+  sha256: 008fc636e6dbefe9f0cffbcceaffc9a14b56ba9eab04989e297b45433add3e41
 
 build:
   number: 0
@@ -17,19 +17,18 @@ build:
 
 requirements:
   host:
-    - python >=3.4
     - pip
+    - python >=3.7
   run:
-    - iniconfig
-    - python >=3.4
-    - python-build
     - check-manifest >=0.28
-    - devpi-common <4,>=3.6.0
-    - pep517
+    - colorama
+    - devpi-common <5,>=4
+    - iniconfig
     - pkginfo >=1.4.2
     - platformdirs
     - pluggy >=0.6.0,<2.0
-    - py >=1.4.31
+    - python >=3.7
+    - python-build
 
 test:
   imports:
@@ -46,6 +45,7 @@ about:
   license: MIT
   license_file: LICENSE
   dev_url: https://github.com/devpi/devpi
+  doc_url: https://doc.devpi.net
 
 extra:
   recipe-maintainers:
