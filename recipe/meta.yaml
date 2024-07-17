@@ -29,6 +29,7 @@ requirements:
     - pluggy >=0.6.0,<2.0
     - python >=3.7
     - python-build >=0.7.0
+    - tomli
 
 test:
   imports:
