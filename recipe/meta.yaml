@@ -1,11 +1,12 @@
 {% set version = "7.2.0" %}
+{% set python_min = python_min | default("3.9") %}
 
 package:
   name: devpi-client
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/d/devpi-client/devpi-client-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/d/devpi-client/devpi-client-{{ version }}.tar.gz
   sha256: c143368458c3878ba7bee6a1d9b418e2e659571a3856614f58d76b8a28269d7b
 
 build:
@@ -18,27 +19,28 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - check-manifest >=0.28
     - colorama
     - devpi-common >=4,<5
     - iniconfig
-    - pkginfo >=1.4.2
+    - pkginfo >=1.10.0
     - platformdirs
     - pluggy >=0.6.0,<2.0
-    - python >=3.7
+    - python >={{ python_min }}
     - python-build >=0.7.0
     - tomli
 
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
   imports:
     - devpi
   commands:
     - pip check
     - devpi --help
-  requires:
-    - pip
 
 about:
   home: https://devpi.net
