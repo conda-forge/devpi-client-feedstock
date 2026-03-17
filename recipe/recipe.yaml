@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "7.2.1"
+  python_check_max: "3.14"
+
+package:
+  name: devpi-client
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/d/devpi-client/devpi_client-${{ version }}.tar.gz
+  sha256: ecaaf5b7fab54f519e74b4a692aa10645e09aa7f245cf6b361826edab835565b
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - devpi = devpi.main:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - check-manifest >=0.28
+    - colorama
+    - devpi-common >=4,<5
+    - iniconfig
+    - pkginfo >=1.10.0
+    - platformdirs
+    - pluggy >=0.6.0,<2.0
+    - python >=${{ python_min }}
+    - python-build >=0.7.0
+    - requests >=2.3.0
+    - tomli
+
+tests:
+  - python:
+      imports: devpi
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+  - files:
+      source:
+        - testing/
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest-cov
+    script:
+      - devpi --help
+      - coverage run --source=devpi --branch -m pytest -vv --tb=long --color=yes testing
+      - coverage report --show-missing --skip-covered --fail-under=100
+
+about:
+  summary: devpi upload/install/... workflow commands for Python developers
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/devpi-client
+  repository: https://github.com/devpi/devpi
+  documentation: https://doc.devpi.net
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
