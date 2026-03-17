@@ -3,7 +3,7 @@ About devpi-client-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/devpi-client-feedstock/blob/main/LICENSE.txt)
 
-Home: https://devpi.net
+Home: https://pypi.org/project/devpi-client
 
 Package license: MIT
 
@@ -11,7 +11,7 @@ Summary: devpi upload/install/... workflow commands for Python developers
 
 Development: https://github.com/devpi/devpi
 
-Documentation: https://doc.devpi.net
+Documentation: https://doc.devpi.net/
 
 Current build status
 ====================
