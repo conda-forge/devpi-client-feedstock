@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "7.2.1"
+  version: "7.3.0"
   python_check_max: "3.14"
   cov_fail_under: "72"
   pytest_skip: |-
@@ -25,7 +25,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/devpi-client/devpi_client-${{ version }}.tar.gz
-  sha256: ecaaf5b7fab54f519e74b4a692aa10645e09aa7f245cf6b361826edab835565b
+  sha256: 03eda8adb28c2974de00bfd7186ad5a978e46adaca7bc957231f2dfa489abec7
 
 build:
   number: 0
